@@ -34,4 +34,4 @@
 * 為何要挑選這些 L1s (Hindi1, Korean, Mandarin, Spanish and Arabic)? 因為這些不同母語的英文學習者的口音差異大，可以提供不同的挑戰。
 * 不同母語者的 error pattern 不盡相同，但寫得好複雜偶不是唸語文系的偶看不下去
 
-
+  <img src="./table/L2-ARCTIC：A Non-Native English Speech Corpus；table1.png" width="400"/>
