@@ -40,4 +40,10 @@
 * 該語料使用 CMU ARCTIC prompts 1,132 句，選擇這份 prompt 有兩個原因：
   1. 他是音素平衡(phonetically-balanced)的，phonemes, diphones and triphones 的 coverage 為 100%, 79.6% and 13.7%
   2. ARCTIC corpus 被證實在 語音合成 以及 voice conversion 等任務都表現得不錯 (猜測是 phone coverage 很好的意思)
-* 該語料是在安靜的房間使用 
+* 該語料是在安靜的房間使用 Samson C03U microphone + Earamble studio microphone pop filter(麥克風防風罩) 等設備錄製。麥克風距離語者 20cm 避免噴麥(air puffing)。若是語句有嚴重不順暢或偏離 prompt 則會要求重錄。
+
+  <img src="./extra/Samson C03U microphone.png" width="300"/>
+  <img src="./extra/Earamble studio microphone pop filter.jpg" width="300"/>
+  
+* 使用 Montreal forced-aligner 來產生 phone boundaries，並以 PRAAT’s TextGrid 格式來儲存
+
