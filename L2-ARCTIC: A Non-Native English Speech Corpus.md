@@ -33,5 +33,11 @@
 ## Corpus curation procedure
 * 為何要挑選這些 L1s (Hindi1, Korean, Mandarin, Spanish and Arabic)? 因為這些不同母語的英文學習者的口音差異大，可以提供不同的挑戰。
 * 不同母語者的 error pattern 不盡相同，但寫得好複雜偶不是唸語文系的偶看不下去
+* 語者都是來自 Iowa State University 的學生，年齡分佈在 22~43，平均 29 歲。每個學生皆有托福網路測驗的成績量化英語程度(參考[Table 1](https://github.com/joeychsu/PaperStudy/blob/master/table/L2-ARCTIC%EF%BC%9AA%20Non-Native%20English%20Speech%20Corpus%EF%BC%9Btable1.png))。
 
+  <img src="./table/L2-ARCTIC：A Non-Native English Speech Corpus；table1.png" width="400"/>
 
+* 該語料使用 CMU ARCTIC prompts 1,132 句，選擇這份 prompt 有兩個原因：
+  1. 他是音素平衡(phonetically-balanced)的，phonemes, diphones and triphones 的 coverage 為 100%, 79.6% and 13.7%
+  2. ARCTIC corpus 被證實在 語音合成 以及 voice conversion 等任務都表現得不錯 (猜測是 phone coverage 很好的意思)
+* 該語料是在安靜的房間使用 
