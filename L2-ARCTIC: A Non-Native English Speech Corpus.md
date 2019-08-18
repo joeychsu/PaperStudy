@@ -45,5 +45,11 @@
   <img src="./extra/Samson C03U microphone.png" width="300"/>
   <img src="./extra/Earamble studio microphone pop filter.jpg" width="300"/>
   
-* 使用 Montreal forced-aligner 來產生 phone boundaries，並以 PRAAT’s TextGrid 格式來儲存
+* 使用 Montreal forced-aligner 來產生 phone boundaries，並以 PRAAT’s TextGrid 格式來儲存 (參考[Figure 1](https://github.com/joeychsu/PaperStudy/blob/master/figure/L2-ARCTIC%EF%BC%9AA%20Non-Native%20English%20Speech%20Corpus%EF%BC%9Bfigure1.png))
 
+<img src="./figure/L2-ARCTIC：A Non-Native English Speech Corpus；figure1.png" width="500"/>
+
+* 每個語者皆標記 100 句 common set，另外 50 句的錯誤為 L1-dependent，使用 [ARPAbet phoneme](https://en.wikipedia.org/wiki/ARPABET) 來標注以及 phonetic transcriptions 以及 error tags
+* 為確保高品質的標注，標註者為 3 位 語言與科技相關的 PhD 學生
+
+## Corpus statistics
