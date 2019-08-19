@@ -4,7 +4,7 @@
 ## Abstract
 * 這個 corpus 主要是設計來進行 voice conversion, accent conversion and mispronunciation detection 等研究
 * 其中 10 位語者有的 first languages (L1s) 分別是 Hindi(印度), Korean, Mandarin, Spanish and Arabic，每種語言男女各一
-* 每個語者參考 CMU ARCTIC prompts 錄製一個小時的語料(read speech)
+* 每個語者參考 [CMU ARCTIC prompts](http://www.festvox.org/cmu_arctic/) 錄製一個小時的語料(read speech)
 * 每個語者有 150 句手動標記出三種類型的錯誤發音(substitutions, deletions and additions)
 
 ## Introduction
@@ -21,7 +21,7 @@
 ## The need for a new L2 English corpus
 * 現有的 non-native English corpora 涵蓋 native languages and speakers 的範圍很廣，但是每個語者只有 short paragraph ([Speech Accent Archive](http://accent.gmu.edu/)) 或是 short free speech task ([IDEA](https://www.dialectsarchive.com/))。而且錄音有非常吵雜的環境噪音，這非常不適合用於 voice/accent conversion 等任務。
 * 另外 [Wildcat](http://faculty.wcas.northwestern.edu/ann-bradlow/publications/2010/2010_VanEngenetal.pdf), [LDC2007S08](https://catalog.ldc.upenn.edu/) and [NUFAESD](http://www.tessabent.com/interlanguage.pdf) datasets 在每個 non-native speaker 的錄音數量都很有限，且 [LDC2007S08](https://catalog.ldc.upenn.edu/) 還要收費。
-* 跟 mispronunciation detection 叫相關的 corpora：
+* 跟 mispronunciation detection 較相關的 corpora：
 
   |corpora|description|
   |---|---|
@@ -53,3 +53,16 @@
 * 為確保高品質的標注，標註者為 3 位 語言與科技相關的 PhD 學生
 
 ## Corpus statistics
+* 整個 dataset 有 11,026 句，11.2 小時，平均每個語者 67 分鐘，每句平均 3.7 秒。約有 97,000 word segments，平均每句 9 個 words，總共約有 349,000 phone segments。
+* 專家標記的結果有 1,499 句，其中含有 5,199 substitutions, 1,048 deletions and 497 additions (phone-level)，[Figure 3](https://github.com/joeychsu/PaperStudy/blob/master/figure/L2-ARCTIC%EF%BC%9AA%20Non-Native%20English%20Speech%20Corpus%EF%BC%9Bfigure3.png) 顯示個母語者較常發生的 error pattern。
+
+  <img src="./figure/L2-ARCTIC：A Non-Native English Speech Corpus；figure3.png" width="800"/>
+
+## Mispronunciation detection evaluation
+* 使用傳統的 [GOP](https://github.com/guanlongzhao/kaldi-gop) 來建立 Mispronunciation detection benchmark
+* Acoustic Model 使用 [Kaldi's Librispeech training script](https://github.com/kaldi-asr/kaldi/tree/master/egs/librispeech) 訓練，AM 架構為 GMM(tri6b)，使用 Librispeech (native English speech) 作為訓練語料。該 AM 基於 3-gram LM 在 clean test set WER 約 8%。
+ * 實驗 based on GOP score 且 phone-independent thresholding 來畫出 Recall-Precision Curve ([Figure 4](https://github.com/joeychsu/PaperStudy/blob/master/figure/L2-ARCTIC%EF%BC%9AA%20Non-Native%20English%20Speech%20Corpus%EF%BC%9Bfigure4.png))
+
+  <img src="./figure/L2-ARCTIC：A Non-Native English Speech Corpus；figure4.png" width="500"/>
+
+* 初步的實驗著重在 substitution errors，GOP 目前無法處理 additions / deletions error
