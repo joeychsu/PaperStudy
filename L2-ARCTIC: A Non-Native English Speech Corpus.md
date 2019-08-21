@@ -66,3 +66,5 @@
   <img src="./figure/L2-ARCTIC：A Non-Native English Speech Corpus；figure4.png" width="500"/>
 
 * 初步的實驗著重在 substitution errors，GOP 目前無法處理 additions / deletions error
+* 1,499 個有標記的語句，其中 206 句用來偵測 threshold(phone-independent) 的 range，剩下的 1,293 句作為 test data。測試資料有 41,353 個 phone segments，其中 4,415(10.7%) 個有發生 substitution errors。
+* log GOP threshold 設置在 0 ~ -16 之間，step size 為 0.1 來畫出 Curve ([Figure 4](https://github.com/joeychsu/PaperStudy/blob/master/figure/L2-ARCTIC%EF%BC%9AA%20Non-Native%20English%20Speech%20Corpus%EF%BC%9Bfigure4.png))。當 threshold = -4.2，Precision 與 Recall 相同 (0.29)
